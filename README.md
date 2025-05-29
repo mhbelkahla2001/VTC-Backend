@@ -37,45 +37,52 @@ Il gère l’ensemble de la logique métier : gestion des utilisateurs, réserva
 
 ## 📁 Structure du projet
 
+```
 vtc_backend/
-├── core/ # Réservations, utils, notifications
-├── users/ # Inscription, connexion, rôles (client/chauffeur/admin)
-├── subscriptions/ # Abonnements et paiements Stripe
-├── chatbot/ # Intégration avec Rasa/OpenAI
-├── settings.py # Configuration principale Django
-├── urls.py # Routes principales
-└── .env # Clés API et secrets (non versionné)
-
-
+├── core/                 # Réservations, utils, notifications
+├── users/                # Inscription, connexion, rôles (client/chauffeur/admin)
+├── subscriptions/        # Abonnement et paiements Stripe
+├── chatbot/              # Intégration avec Rasa/OpenAI
+├── settings.py           # Configuration Django
+├── urls.py               # Routes principales
+└── .env                  # Clés API (non versionné)
+```
 
 ---
 
 ## ⚙️ Installation locale
 
-## 1. Cloner le dépôt
+### 1. Cloner le dépôt
 
+```bash
 git clone https://github.com/mhbelkahla2001/pfe.git
 cd vtc_backend
+```
 
+### 2. Créer un environnement virtuel
 
-###2.Créer un environnement virtuel et l’activer
+```bash
 python -m venv .venv
-
-# Sous Windows
+# Windows
 .venv\Scripts\activate
-
-# Sous macOS / Linux
+# macOS/Linux
 source .venv/bin/activate
+```
 
-##3. Installer les dépendances
+### 3. Installer les dépendances
+
+```bash
 pip install -r requirements.txt
+```
 
-###4. Créer le fichier .env
+### 4. Créer un fichier `.env`
+
+```env
 SECRET_KEY=your_secret_key
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 
-# Base de données PostgreSQL
+# Database
 DB_NAME=vtc_db
 DB_USER=postgres
 DB_PASSWORD=your_password
@@ -83,19 +90,53 @@ DB_HOST=localhost
 DB_PORT=5432
 
 # Twilio
-TWILIO_ACCOUNT_SID=your_twilio_sid
-TWILIO_AUTH_TOKEN=your_twilio_token
-TWILIO_PHONE_NUMBER=+216xxxxxxxx
+TWILIO_ACCOUNT_SID=xxxx
+TWILIO_AUTH_TOKEN=xxxx
+TWILIO_PHONE_NUMBER=+216xxxxxxx
 
 # Stripe
-STRIPE_SECRET_KEY=sk_test_xxxxxxxxxxxxx
-STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxx
+STRIPE_SECRET_KEY=sk_test_XXXX
+STRIPE_WEBHOOK_SECRET=whsec_XXXX
 
 # Mapbox
-MAPBOX_ACCESS_TOKEN=pk.xxxxxxxxxxxxxxxxx
+MAPBOX_ACCESS_TOKEN=pk.XXXX
+```
 
-##5. Appliquer les migrations
+### 5. Appliquer les migrations
+
+```bash
 python manage.py migrate
+```
 
-##6. Lancer le serveur local
+### 6. Lancer le serveur
+
+```bash
 python manage.py runserver
+```
+
+---
+
+## 🧪 Tests de l’API
+
+Utilisez **Postman** ou **cURL** pour tester les endpoints REST exposés via `api/`.
+
+---
+
+## 🛡️ Sécurité
+
+> Toutes les **clés API** et **identifiants sensibles** sont stockés dans le fichier `.env` (non versionné).  
+> ⚠️ **Ne jamais** les inclure dans un commit Git.
+
+---
+
+## 👨‍💻 Auteur
+
+- **Nom** : Belkahla Mohamed Habib  
+- 🎓 Projet de Fin d’Études – EPI Digital School  
+- 📫 Email : mhbelkahla2001@gmail.com
+
+---
+
+## 📝 Licence
+
+Ce projet est destiné à un usage pédagogique et personnel. Pour toute réutilisation commerciale, merci de contacter l’auteur.
