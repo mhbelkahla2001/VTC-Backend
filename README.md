@@ -46,23 +46,36 @@ vtc_backend/
 ├── urls.py # Routes principales
 └── .env # Clés API (non versionné)
 
-#Créer un environnement virtuel
-   python -m venv .venv
-# Windows
+
+---
+
+## ⚙️ Installation locale
+
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/mhbelkahla2001/pfe.git
+cd vtc_backend
+
+
+##2.Créer un environnement virtuel et l’activer
+python -m venv .venv
+
+# Sous Windows
 .venv\Scripts\activate
-# macOS/Linux
+
+# Sous macOS / Linux
 source .venv/bin/activate
 
-#Installer les dépendances
+##3. Installer les dépendances
 pip install -r requirements.txt
 
- #Créer un fichier .env : 
- 
- SECRET_KEY=your_secret_key
+##4. Créer le fichier .env
+SECRET_KEY=your_secret_key
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 
-# Database
+# Base de données PostgreSQL
 DB_NAME=vtc_db
 DB_USER=postgres
 DB_PASSWORD=your_password
@@ -70,20 +83,19 @@ DB_HOST=localhost
 DB_PORT=5432
 
 # Twilio
-TWILIO_ACCOUNT_SID=xxxx
-TWILIO_AUTH_TOKEN=xxxx
-TWILIO_PHONE_NUMBER=+216xxxxxxx
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_PHONE_NUMBER=+216xxxxxxxx
 
 # Stripe
-STRIPE_SECRET_KEY=sk_test_XXXX
-STRIPE_WEBHOOK_SECRET=whsec_XXXX
+STRIPE_SECRET_KEY=sk_test_xxxxxxxxxxxxx
+STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxx
 
 # Mapbox
-MAPBOX_ACCESS_TOKEN=pk.XXXX
+MAPBOX_ACCESS_TOKEN=pk.xxxxxxxxxxxxxxxxx
 
-#Appliquer les migrations
+##5. Appliquer les migrations
 python manage.py migrate
 
-#Lancer le serveur
+##6. Lancer le serveur local
 python manage.py runserver
-
