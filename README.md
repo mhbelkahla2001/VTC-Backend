@@ -40,11 +40,12 @@ Il gère l’ensemble de la logique métier : gestion des utilisateurs, réserva
 vtc_backend/
 ├── core/ # Réservations, utils, notifications
 ├── users/ # Inscription, connexion, rôles (client/chauffeur/admin)
-├── subscriptions/ # Abonnement et paiements Stripe
+├── subscriptions/ # Abonnements et paiements Stripe
 ├── chatbot/ # Intégration avec Rasa/OpenAI
-├── settings.py # Configuration Django
+├── settings.py # Configuration principale Django
 ├── urls.py # Routes principales
-└── .env # Clés API (non versionné)
+└── .env # Clés API et secrets (non versionné)
+
 
 
 ---
@@ -53,12 +54,11 @@ vtc_backend/
 
 ### 1. Cloner le dépôt
 
-```bash
 git clone https://github.com/mhbelkahla2001/pfe.git
 cd vtc_backend
 
 
-##2.Créer un environnement virtuel et l’activer
+###2.Créer un environnement virtuel et l’activer
 python -m venv .venv
 
 # Sous Windows
@@ -67,10 +67,10 @@ python -m venv .venv
 # Sous macOS / Linux
 source .venv/bin/activate
 
-##3. Installer les dépendances
+###3. Installer les dépendances
 pip install -r requirements.txt
 
-##4. Créer le fichier .env
+###4. Créer le fichier .env
 SECRET_KEY=your_secret_key
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
@@ -94,8 +94,8 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxx
 # Mapbox
 MAPBOX_ACCESS_TOKEN=pk.xxxxxxxxxxxxxxxxx
 
-##5. Appliquer les migrations
+###5. Appliquer les migrations
 python manage.py migrate
 
-##6. Lancer le serveur local
+###6. Lancer le serveur local
 python manage.py runserver
