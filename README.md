@@ -133,7 +133,7 @@ Utilisez **Postman** ou **cURL** pour tester les endpoints REST exposés via `ap
 
 - **Nom** : Belkahla Mohamed Habib  
 - 🎓 Projet de Fin d’Études – EPI Digital School  
-- 📫 Email : mhbelkahla2001@gmail.com
+- 📫 Email : benkahla.medhabib@hotmail.com
 
 ---
 
