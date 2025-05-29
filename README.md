@@ -52,7 +52,7 @@ vtc_backend/
 
 ## ⚙️ Installation locale
 
-### 1. Cloner le dépôt
+## 1. Cloner le dépôt
 
 git clone https://github.com/mhbelkahla2001/pfe.git
 cd vtc_backend
@@ -67,7 +67,7 @@ python -m venv .venv
 # Sous macOS / Linux
 source .venv/bin/activate
 
-###3. Installer les dépendances
+##3. Installer les dépendances
 pip install -r requirements.txt
 
 ###4. Créer le fichier .env
@@ -94,8 +94,8 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxx
 # Mapbox
 MAPBOX_ACCESS_TOKEN=pk.xxxxxxxxxxxxxxxxx
 
-###5. Appliquer les migrations
+##5. Appliquer les migrations
 python manage.py migrate
 
-###6. Lancer le serveur local
+##6. Lancer le serveur local
 python manage.py runserver
